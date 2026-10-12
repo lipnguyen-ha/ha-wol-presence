@@ -79,7 +79,7 @@ logger:
 ## Dự án liên quan
 
 - [Aurora Home Theme](https://github.com/lipnguyen-ha/ha-aurora-home-theme): theme nền gradient, thẻ kính mờ cho Home Assistant.
-- [IR Remote Card](https://github.com/lipnguyen-ha/ha-ir-remote-card): card remote cho thiết bị hồng ngoại không trạng thái, phát qua ESPHome.
+- [Aurora Device Control Card](https://github.com/lipnguyen-ha/ha-aurora-device-control-card): card điều khiển quạt, loa, TV hồng ngoại (qua ESPHome), điều hòa, robot hút bụi và camera theo cùng một kiểu.
 
 ## Giấy phép
 
