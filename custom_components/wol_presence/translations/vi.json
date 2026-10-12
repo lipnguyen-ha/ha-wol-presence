@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Them thiet bi",
+        "description": "Cong tac se danh thuc thiet bi va hien thi thiet bi dang bat hay tat.",
+        "data": {
+          "name": "Ten",
+          "mac": "Dia chi MAC",
+          "host": "Dia chi IP",
+          "method": "Cach kiem tra online",
+          "port": "Cong TCP",
+          "broadcast_address": "Dia chi broadcast",
+          "broadcast_port": "Cong broadcast",
+          "scan_interval": "Kiem tra moi"
+        },
+        "data_description": {
+          "mac": "Dia chi MAC cua thiet bi can danh thuc.",
+          "host": "Dia chi IP dung de kiem tra thiet bi con thuc hay khong.",
+          "method": "May PC dung ICMP ping. May Mac ngu van tra loi ping nen phai dung TCP probe.",
+          "port": "Chi dung cho TCP probe, ping thi bo qua. Cong nao cung duoc: port mo hay bi tu choi ket noi deu chung to may dang thuc. 54321 la mac dinh an toan.",
+          "broadcast_address": "De trong thi tu suy ra tu dia chi IP o tren (192.168.0.105 -> 192.168.0.255). Magic packet luon duoc gui kem toi 255.255.255.255 nen phu ca hai kieu broadcast.",
+          "broadcast_port": "Cong gui magic packet. Mac dinh 9, thuong khong can doi.",
+          "scan_interval": "So giay giua hai lan kiem tra."
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Dia chi MAC khong hop le.",
+      "port_required": "TCP probe can so hieu cong."
+    },
+    "abort": {
+      "already_configured": "Dia chi MAC nay da duoc them roi."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Device settings",
+        "data": {
+          "mac": "MAC address",
+          "host": "IP address",
+          "method": "Presence check",
+          "port": "TCP port",
+          "broadcast_address": "Broadcast address",
+          "broadcast_port": "Broadcast port",
+          "scan_interval": "Check every"
+        },
+        "data_description": {
+          "method": "Use ICMP ping for PCs. Macs answer ping while asleep, so use a TCP probe for those.",
+          "port": "Chi dung cho TCP probe, ping thi bo qua. Cong nao cung duoc: port mo hay bi tu choi ket noi deu chung to may dang thuc. 54321 la mac dinh an toan.",
+          "scan_interval": "Seconds between presence checks.",
+          "broadcast_address": "De trong thi tu suy ra tu dia chi IP o tren (192.168.0.105 -> 192.168.0.255). Magic packet luon duoc gui kem toi 255.255.255.255 nen phu ca hai kieu broadcast."
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "That is not a valid MAC address.",
+      "port_required": "The TCP probe needs a port number."
+    }
+  },
+  "selector": {
+    "method": {
+      "options": {
+        "ping": "ICMP ping",
+        "tcp": "TCP probe (may Mac, may ngu van tra loi ping)"
+      }
+    }
+  }
+}

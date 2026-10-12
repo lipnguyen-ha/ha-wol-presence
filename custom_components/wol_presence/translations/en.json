@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a device",
+        "description": "The switch wakes this device and shows whether it is currently awake.",
+        "data": {
+          "name": "Name",
+          "mac": "MAC address",
+          "host": "IP address",
+          "method": "Presence check",
+          "port": "TCP port",
+          "broadcast_address": "Broadcast address",
+          "broadcast_port": "Broadcast port",
+          "scan_interval": "Check every"
+        },
+        "data_description": {
+          "mac": "MAC address of the device to wake up.",
+          "host": "IP address used to check whether the device is awake.",
+          "method": "Use ICMP ping for PCs. Macs answer ping while asleep, so use a TCP probe for those.",
+          "port": "Only used by the TCP probe, ignored by ping. Any port works: an open port and a refused connection both prove the machine is awake. 54321 is a safe default.",
+          "broadcast_address": "Leave empty and it is derived from the IP address above (192.168.0.105 -> 192.168.0.255). The magic packet always goes to 255.255.255.255 as well, so both kinds of broadcast are covered.",
+          "broadcast_port": "The port to send the magic packet to. Defaults to 9 and is normally not changed.",
+          "scan_interval": "Seconds between presence checks."
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "That is not a valid MAC address.",
+      "port_required": "The TCP probe needs a port number."
+    },
+    "abort": {
+      "already_configured": "This MAC address is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Device settings",
+        "data": {
+          "mac": "MAC address",
+          "host": "IP address",
+          "method": "Presence check",
+          "port": "TCP port",
+          "broadcast_address": "Broadcast address",
+          "broadcast_port": "Broadcast port",
+          "scan_interval": "Check every"
+        },
+        "data_description": {
+          "method": "Use ICMP ping for PCs. Macs answer ping while asleep, so use a TCP probe for those.",
+          "port": "Only used by the TCP probe, ignored by ping. Any port works: an open port and a refused connection both prove the machine is awake. 54321 is a safe default.",
+          "scan_interval": "Seconds between presence checks.",
+          "broadcast_address": "Leave empty and it is derived from the IP address above (192.168.0.105 -> 192.168.0.255). The magic packet always goes to 255.255.255.255 as well, so both kinds of broadcast are covered."
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "That is not a valid MAC address.",
+      "port_required": "The TCP probe needs a port number."
+    }
+  },
+  "selector": {
+    "method": {
+      "options": {
+        "ping": "ICMP ping",
+        "tcp": "TCP probe (Macs, hosts that answer ping while asleep)"
+      }
+    }
+  }
+}
